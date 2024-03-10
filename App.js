@@ -1,30 +1,45 @@
 // Import necessary components and dependencies
-import { StatusBar } from 'expo-status-bar';
-import React, { useContext, useEffect, useState } from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import CategoriesScreen from './screens/CategoriesScreen';
-import MealsOverViewScreen from './screens/MealsOverViewScreen';
-import MealDetailScreen from './screens/MealDetailScreen';
-import FavoriteScreen from './screens/FavoriteScreen';
-import LoginScreen from './screens/LoginScreen';
-import SignupScreen from './screens/SignupScreen';
-import { Colors } from './constants/styles';
-import IconButton from './components/ui/IconButton';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import AppLoading from 'expo-app-loading';
-import FavoriteContextProvider from './store/context/FavoriteContext';
-import { AuthContext } from './store/context/auth-context';
-import AuthContextProvider from './store/context/auth-context';
-import { NavigationContainer } from '@react-navigation/native';
-
-import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from "expo-status-bar";
+import React, { useContext, useEffect, useState } from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import CategoriesScreen from "./screens/CategoriesScreen";
+import MealsOverViewScreen from "./screens/MealsOverViewScreen";
+import MealDetailScreen from "./screens/MealDetailScreen";
+import FavoriteScreen from "./screens/FavoriteScreen";
+import LoginScreen from "./screens/LoginScreen";
+import SignupScreen from "./screens/SignupScreen";
+import { Colors } from "./constants/styles";
+import IconButton from "./components/ui/IconButton";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import AppLoading from "expo-app-loading";
+import FavoriteContextProvider from "./store/context/FavoriteContext";
+import { AuthContext } from "./store/context/auth-context";
+import AuthContextProvider from "./store/context/auth-context";
+import { NavigationContainer } from "@react-navigation/native";
+import * as SplashScreen from "expo-splash-screen";
 
 const Stack = createNativeStackNavigator();
 
 function AuthenticatedStack() {
-  const Drawer = createDrawerNavigator();
 
+  // useEffect(()=>{
+  //   data();
+  // },[])
+
+  // const data = () =>{
+
+  //   const URL="https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+
+  //   fetch(URL).then((res)=>{
+  //     return res.json()
+  //   })
+  //   .then((data)=>{
+  //     console.log(JSON.stringify(data))
+  //   })
+  // }
+  
+  const Drawer = createDrawerNavigator();
   function MyDrawer() {
     const authCtx = useContext(AuthContext);
 
@@ -45,8 +60,8 @@ function AuthenticatedStack() {
                 onPress={authCtx.logout}
               />
             ),
-            headerStyle: { backgroundColor: '#f106bf' },
-            cardStyle: { backgroundColor: '#ec90d6' },
+            headerStyle: { backgroundColor: "#f106bf" },
+            cardStyle: { backgroundColor: "#ec90d6" },
           }}
         />
         <Drawer.Screen
@@ -68,15 +83,15 @@ function AuthenticatedStack() {
       <FavoriteContextProvider>
         <Stack.Navigator
           screenOptions={{
-            headerStyle: { backgroundColor: '#f106bf' },
-            cardStyle: { backgroundColor: '#ec90d6' },
+            headerStyle: { backgroundColor: "#f106bf" },
+            cardStyle: { backgroundColor: "#ec90d6" },
           }}
         >
           <Stack.Screen
             name="Meal Category"
             component={MyDrawer}
             options={{
-              title: 'All Categories',
+              title: "All Categories",
               headerShown: false,
             }}
           />
@@ -92,8 +107,8 @@ function AuthStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: '#f106bf' },
-        headerTintColor: 'white',
+        headerStyle: { backgroundColor: "#f106bf" },
+        headerTintColor: "white",
         contentStyle: { backgroundColor: Colors.primary100 },
       }}
     >
@@ -121,12 +136,12 @@ function Root() {
   useEffect(() => {
     async function getToken() {
       try {
-        const storageToken = await AsyncStorage.getItem('token');
+        const storageToken = await AsyncStorage.getItem("token");
         if (storageToken) {
           authCtx.authenticate(storageToken);
         }
       } catch (error) {
-        console.error('Error loading token:', error);
+        console.error("Error loading token:", error);
       } finally {
         setIsFetching(true);
       }
@@ -136,7 +151,7 @@ function Root() {
       try {
         await SplashScreen.hideAsync();
       } catch (error) {
-        console.error('Error hiding splash screen:', error);
+        console.error("Error hiding splash screen:", error);
       }
     }
 
