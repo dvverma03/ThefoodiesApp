@@ -2,16 +2,16 @@ import Category from '../models/category';
 import Meal from '../models/meal';
 
 export const CATEGORIES = [
-  new Category('c1', 'Italian', '#f5428d'),
-  new Category('c2', 'Quick & Easy', '#f54242'),
-  new Category('c3', 'Hamburgers', '#f5a442'),
-  new Category('c4', 'German', '#f5d142'),
-  new Category('c5', 'Light & Lovely', '#368dff'),
-  new Category('c6', 'Exotic', '#41d95d'),
-  new Category('c7', 'Breakfast', '#9eecff'),
-  new Category('c8', 'Asian', '#b9ffb0'),
-  new Category('c9', 'French', '#ffc7ff'),
-  new Category('c10', 'Summer', '#47fced')
+  new Category('c1', 'Italian', 'https://www.hotelmousai.com/blog/wp-content/uploads/2021/12/Top-10-Traditional-Foods-in-Italy.jpg'),
+  new Category('c2', 'Quick & Easy', 'https://media.cnn.com/api/v1/images/stellar/prod/210211141204-05-classic-italian-dishes.jpg?q=w_1110,c_fill'),
+  new Category('c3', 'Hamburgers', 'https://cdn.dribbble.com/userupload/7433804/file/original-30b05371ef8ef32dce009346d35b7114.jpg?resize=400x300&vertical=center'),
+  new Category('c4', 'German', 'https://theplanetd.com/images/Traditional-German-food.jpg'),
+  new Category('c5', 'Light & Lovely', 'https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Teriyaki-tofu-45308d5.jpg?quality=90&resize=556,505'),
+  new Category('c6', 'Exotic', 'https://vcdn1-english.vnecdn.net/2022/10/28/-4996-1666924081.jpg?w=500&h=300&q=100&dpr=2&fit=crop&s=rkoCMoYc9MOwS1VQaehSgw'),
+  new Category('c7', 'Breakfast', 'https://simply-delicious-food.com/wp-content/uploads/2022/09/Breakfast-board28.jpg'),
+  new Category('c8', 'Asian', 'https://unpeeledjournal.com/wp-content/uploads/2023/04/52828002762_99f3b99b45_b.jpg'),
+  new Category('c9', 'French', 'https://media.cnn.com/api/v1/images/stellar/prod/220526171815-12-classic-french-dishes-profiteroles.jpg?c=original'),
+  new Category('c10', 'Summer', 'https://www.eatingwell.com/thmb/8vDqJxFNHyHT-y4DVTrDsntI_Lg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/5419901-9385fcb9a0824d7ebfa0765c19bd37df.jpg')
 ];
 
 export const MEALS = [

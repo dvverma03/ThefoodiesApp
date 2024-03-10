@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   labelInvalid: {
-    color: 'Colors.error500',
+    color: Colors.error500,
   },
   input: {
     paddingVertical: 8,
